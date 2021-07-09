@@ -31,7 +31,7 @@ public class SingleTest extends BrowserStackTestNGTest {
 
     @Test
     public void test() throws Exception {
-        driver.get("https://www.google.com/ncr");
+        driver.get("https://www.google.com/");
         driver.findElement(By.id("L2AGLb")).click();
 
         WebElement element = driver.findElement(By.name("q"));
