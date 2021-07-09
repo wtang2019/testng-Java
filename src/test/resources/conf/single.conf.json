@@ -4,7 +4,7 @@
   "key": "WwNEY9DAPxyukuhFiQxt",
 
   "capabilities": {
-    "build": "testng-browserstack",
+    "build": "BrowserStack",
     "name": "single_test",
     "browserstack.debug": true,
     "browserstack.networkLogs": true
