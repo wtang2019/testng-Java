@@ -1,16 +1,18 @@
 {
   "server": "hub-cloud.browserstack.com",
-  "user": "BROWSERSTACK_USERNAME",
-  "key": "BROWSERSTACK_ACCESS_KEY",
+  "user": "wilmertang1",
+  "key": "WwNEY9DAPxyukuhFiQxt",
 
   "capabilities": {
     "build": "testng-browserstack",
     "name": "single_test",
-    "browserstack.debug": true
+    "browserstack.debug": true,
+    "browserstack.networkLogs": true
   },
 
   "environments": {
     "chrome": {
+      "os": "OS X",
       "browser": "chrome"
     }
   }
