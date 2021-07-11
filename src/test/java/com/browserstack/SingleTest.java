@@ -19,12 +19,6 @@ public class SingleTest extends BrowserStackTestNGTest {
 
     @Test
     public void test() throws Exception {
-        String username = System.getenv("BROWSERSTACK_USERNAME");
-        String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
-        String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("build", buildName); // CI/CD job name using BROWSERSTACK_BUILD_NAME env variable
-        driver = new RemoteWebDriver(new URL("https://" + username + ":" + accessKey + "@hub.browserstack.com/wd/hub"), capabilities);
 
         driver.manage().window().maximize(); //Maximize browser window
 
