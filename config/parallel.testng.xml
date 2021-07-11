@@ -32,4 +32,12 @@
             <class name="com.browserstack.SingleTest"/>
         </classes>
     </test>
+
+    <test name="SingleTestOpera">
+        <parameter name="config" value="parallel.conf.json"/>
+        <parameter name="environment" value="opera"/>
+        <classes>
+            <class name="com.browserstack.SingleTest"/>
+        </classes>
+    </test>
 </suite>
