@@ -12,17 +12,23 @@
   "environments": {
     "chrome": {
       "os": "OS X",
-      "browser": "chrome"
+      "browser": "Chrome"
     },
     "firefox": {
-      "browser": "firefox"
+      "os": "OS X",
+      "browser": "Firefox"
     },
     "safari": {
       "os": "OS X",
-      "browser": "safari"
+      "browser": "Safari"
     },
     "ie": {
-      "browser": "internet explorer"
+      "os": "Windows",
+      "browser": "IE"
+    },
+    "opera": {
+      "os": "Windows",
+      "browser": "Opera"
     }
   }
 }
