@@ -10,6 +10,7 @@ import org.testng.asserts.SoftAssert;
 import org.openqa.selenium.Dimension;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
+import java.net.URL;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.JavascriptExecutor;
 
@@ -18,7 +19,14 @@ public class SingleTest extends BrowserStackTestNGTest {
 
     @Test
     public void test() throws Exception {
-        driver.manage().window().maximize();
+        String username = System.getenv("BROWSERSTACK_USERNAME");
+        String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
+        String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("build", buildName); // CI/CD job name using BROWSERSTACK_BUILD_NAME env variable
+        driver = new RemoteWebDriver(new URL("https://" + username + ":" + accessKey + "@hub.browserstack.com/wd/hub"), capabilities);
+
+        driver.manage().window().maximize(); //Maximize browser window
 
         driver.get("https://www.browserstack.com/");
         SoftAssert softAssert = new SoftAssert();
@@ -28,7 +36,7 @@ public class SingleTest extends BrowserStackTestNGTest {
         contactUs.click();
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        driver.findElement(By.id("support-name")).sendKeys("Wilmer Tang");
+        driver.findElement(By.id("support-name")).sendKeys("Wilmer Tang");  //Third assertion if form can be filled in line 38-47
         driver.findElement(By.id("support-email")).sendKeys("wtang88@gmx.de");
 
         WebElement type = driver.findElement(By.id("support_query_type_chosen"));
